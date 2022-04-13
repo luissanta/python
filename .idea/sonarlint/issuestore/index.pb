@@ -1,0 +1,23 @@
+
+F
+Syntax/conditionals.py,0\b\0bbbfd44da07cc58c35a9a959dc793e11e6dc9f0
+„
+TCoursera/Semana_1/CalculadoraIndicesCorporales/consola_calculo_calorias_actividad.py,4\8\4883be2a3da1e2f6d976cdba9e5d2eb5917c54e3
+D
+Practice/pangrams.py,7\2\72c101e4d03f8091702459596f463ff3d2dcba95
+Y
+)Coursera/Semana_1/Test/testMasterTrack.py,2\7\2741b43e685fd82b56d8efb65b68bee49e7734fb
+P
+ Coursera/Semana_1/Test/testM1.py,e\8\e888800405ae22b4072388a8baddd870f0994cfd
+X
+(Coursera/Semana_2/pasaje_bogota_tokio.py,b\d\bde858f6e39aef4d82fc0fdeb985d4c5e7c12fa8
+Q
+!Coursera/Semana_2/es_divisible.py,3\f\3f15bef953875b706ebc5aa3d4e6fbadffb53045
+H
+Practice/reverseWords.py,c\1\c1ce8dabe163264923994e645e484f8d90a2746f
+V
+&Coursera/Semana_2/clasificar_regalo.py,d\3\d3a43a79ba9f37040dfcdff9ade98de3ffe3f12f
+J
+Coursera/Semana_2/mas_a.py,5\2\52c6dcb4c889673b267f37cbf1e6c40ce8d47da8
+?
+Syntax/lists.py,4\5\45e618857e1e4ba7da17002d824f1477f403a67e
