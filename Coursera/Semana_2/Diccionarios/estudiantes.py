@@ -92,39 +92,39 @@ modelo_estudiante = {
 estudiantes = []
 
 # Array de estudiantes de ejemplo
-estudiantes = [
-    {
-        'nombre': 'luis',
-        'código': 1234,
-        'genero': 'masculino',
-        'carrera': 'software',
-        'promedio': 4.8,
-        'ssc': 1
-    },
-    {
-        'nombre': 'daniela',
-        'código': 2345,
-        'genero': 'femenino',
-        'carrera': 'derecho',
-        'promedio': 5.0,
-        'ssc': 2
-    },
-    {
-        'nombre': 'carlos',
-        'código': 3456,
-        'genero': 'masculino',
-        'carrera': 'diseño',
-        'promedio': 4.0,
-        'ssc': 3
-    },
-    {
-        'nombre': 'andrea',
-        'código': 4567,
-        'genero': 'femenino',
-        'carrera': 'artes',
-        'promedio': 3.3,
-        'ssc': 4
-    }
-]
+# estudiantes = [
+#     {
+#         'nombre': 'luis',
+#         'código': 1234,
+#         'genero': 'masculino',
+#         'carrera': 'software',
+#         'promedio': 4.8,
+#         'ssc': 1
+#     },
+#     {
+#         'nombre': 'daniela',
+#         'código': 2345,
+#         'genero': 'femenino',
+#         'carrera': 'derecho',
+#         'promedio': 5.0,
+#         'ssc': 2
+#     },
+#     {
+#         'nombre': 'carlos',
+#         'código': 3456,
+#         'genero': 'masculino',
+#         'carrera': 'diseño',
+#         'promedio': 4.0,
+#         'ssc': 3
+#     },
+#     {
+#         'nombre': 'andrea',
+#         'código': 4567,
+#         'genero': 'femenino',
+#         'carrera': 'artes',
+#         'promedio': 3.3,
+#         'ssc': 4
+#     }
+# ]
 
 menu()

@@ -20,19 +20,19 @@
 # Si lo requiere, puede agregar funciones adicionales.
 
 
-def crea_estudiante(iterador: int) -> dict:
+def crea_estudiante(numero_estudiante: str) -> dict:
     modelo_estudiante['nombre'] = input('Ingrese el nombre del estudiante n°'
-                                        + str(iterador + 1) + ': ')
+                                        + numero_estudiante + ': ')
     modelo_estudiante['matematicas'] = float(input('Ingrese el promedio en matematicas del estudiante n°'
-                                                   + str(iterador + 1) + ': '))
+                                                   + numero_estudiante + ': '))
     modelo_estudiante['español'] = float(input('Ingrese el promedio en español del estudiante n°'
-                                               + str(iterador + 1) + ': '))
+                                               + numero_estudiante + ': '))
     modelo_estudiante['ciencias'] = float(input('Ingrese el promedio en ciencias del estudiante n°'
-                                                + str(iterador + 1) + ': '))
+                                                + numero_estudiante + ': '))
     modelo_estudiante['literatura'] = float(input('Ingrese el promedio en literatura del estudiante n°'
-                                                  + str(iterador + 1) + ': '))
+                                                  + numero_estudiante + ': '))
     modelo_estudiante['arte'] = float(input('Ingrese el promedio en arte del estudiante n°'
-                                            + str(iterador + 1) + ': '))
+                                            + numero_estudiante + ': '))
     return modelo_estudiante
 
 
@@ -59,51 +59,51 @@ modelo_estudiante = {
 }
 estudiantes = []
 
-# for i in range(4):
-#     estudiantes.append(crea_estudiante(i))
+for i in range(5):
+    estudiantes.append(crea_estudiante(str(i + 1)))
 
 # Array de estudiantes de ejemplo
-estudiantes = [
-    {
-        'nombre': 'luis',
-        'matematicas': 3.5,
-        'español': 4.5,
-        'ciencias': 3.2,
-        'literatura': 4.8,
-        'arte': 5.0
-    },
-    {
-        'nombre': 'daniela',
-        'matematicas': 3.5,
-        'español': 4.5,
-        'ciencias': 3.2,
-        'literatura': 4.8,
-        'arte': 5.0
-    },
-    {
-        'nombre': 'carlos',
-        'matematicas': 5.0,
-        'español': 4.5,
-        'ciencias': 3.2,
-        'literatura': 4.8,
-        'arte': 5.0
-    },
-    {
-        'nombre': 'andrea',
-        'matematicas': 3.5,
-        'español': 4.5,
-        'ciencias': 3.2,
-        'literatura': 4.8,
-        'arte': 5.0
-    },
-    {
-        'nombre': 'arturo',
-        'matematicas': 3.5,
-        'español': 4.5,
-        'ciencias': 3.2,
-        'literatura': 5.0,
-        'arte': 5.0
-    }
-]
+# estudiantes = [
+#     {
+#         'nombre': 'luis',
+#         'matematicas': 3.5,
+#         'español': 4.5,
+#         'ciencias': 3.2,
+#         'literatura': 4.8,
+#         'arte': 5.0
+#     },
+#     {
+#         'nombre': 'daniela',
+#         'matematicas': 3.5,
+#         'español': 4.5,
+#         'ciencias': 3.2,
+#         'literatura': 4.8,
+#         'arte': 5.0
+#     },
+#     {
+#         'nombre': 'carlos',
+#         'matematicas': 5.0,
+#         'español': 4.5,
+#         'ciencias': 3.2,
+#         'literatura': 4.8,
+#         'arte': 5.0
+#     },
+#     {
+#         'nombre': 'andrea',
+#         'matematicas': 3.5,
+#         'español': 4.5,
+#         'ciencias': 3.2,
+#         'literatura': 4.8,
+#         'arte': 5.0
+#     },
+#     {
+#         'nombre': 'arturo',
+#         'matematicas': 3.5,
+#         'español': 4.5,
+#         'ciencias': 3.2,
+#         'literatura': 5.0,
+#         'arte': 5.0
+#     }
+# ]
 
 print(mejor_del_salon(estudiantes))
