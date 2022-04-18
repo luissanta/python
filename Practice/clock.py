@@ -1,9 +1,12 @@
-# Tienes un reloj digital con LEDs de 7 segmentos. Un día, al despertar de un sueño de ciencia-ficción, te preguntas: ¿cuántos segmentos se han encendido DESPUÉS DE X segundos, desde la posición 00:00:00?
+# Tienes un reloj digital con LEDs de 7 segmentos. Un día, al despertar de un sueño de ciencia-ficción,
+# te preguntas: ¿cuántos segmentos se han encendido DESPUÉS DE X segundos, desde la posición 00:00:00?
 
 # Considera que en cada segundo, todos los led se apagan y luego se encienden los correspondientes al instante actual.
 
-# (Recuerda: no debe ser "amigable", sino estricto: no debe decir nada como "introduce los segundos" ni responder con nada como "la cantidad de LEDs es..."; 
-# debe tomar cada línea de datos de la entrada estándar, analizarla y mostrar los resultados en la salida estándar, tantas veces como líneas de entrada existan).
+# (Recuerda: no debe ser "amigable", sino estricto: no debe decir nada como "introduce los segundos" ni
+# responder con nada como "la cantidad de LEDs es...";
+# debe tomar cada línea de datos de la entrada estándar, analizarla y mostrar los resultados en la salida
+# estándar, tantas veces como líneas de entrada existan).
 
 seconds = input()
 lineForNumber = {
