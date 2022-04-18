@@ -5,8 +5,6 @@ F
 TCoursera/Semana_1/CalculadoraIndicesCorporales/consola_calculo_calorias_actividad.py,4\8\4883be2a3da1e2f6d976cdba9e5d2eb5917c54e3
 ?
 Syntax/lists.py,4\5\45e618857e1e4ba7da17002d824f1477f403a67e
-^
-.Coursera/Semana_2/String/materias_favoritas.py,7\8\78b5f09517f09432f6ced4f6ed3fe1f5aa216bfc
 A
 Practice/clock.py,6\6\6601d81560c0d7fb4b9eaab2721f34b2827bdc5c
 P
