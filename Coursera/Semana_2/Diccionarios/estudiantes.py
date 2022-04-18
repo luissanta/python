@@ -65,7 +65,7 @@ def buscar_estudiante(estudiantes_a_buscar: list, nombre_estudiante_a_buscar: st
 
 def avanzar_semestre(estudiantes_a_avanzar: list) -> None:
     for estudiante_a_avanzar in estudiantes_a_avanzar:
-        estudiante_a_avanzar['ssc'] = estudiante_a_avanzar['ssc'] + 1
+        estudiante_a_avanzar['ssc'] += 1
 
 
 def estudiantes_en_riesgo(lista_estudiantes: list) -> None:
