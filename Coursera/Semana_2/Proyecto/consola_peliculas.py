@@ -54,92 +54,93 @@ def mostrar_informacion_pelicula(pelicula: dict) -> None:
     print("Dia: " + dia + " Hora: " + hora_formato + ":" + min_formato)
 
 
-def ejecutar_encontrar_pelicula_mas_larga(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> None:
+def ejecutar_encontrar_pelicula(peliculas: list) -> None:
     """Ejecuta la opcion de encontrar la pelicula mas larga.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     """
-   # TODO: Completar
+    nombre = input('Ingrese el nombre de la película a buscar: ')
+    pelicula = mod.encontrar_pelicula(nombre, peliculas)
+    if pelicula is None:
+        print("No hay ninguna película con este nombre")
+    else:
+        print(pelicula)
 
 
-def ejecutar_consultar_duracion_promedio_peliculas(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> None:
+def ejecutar_encontrar_pelicula_mas_larga(peliculas: list) -> None:
+    """Ejecuta la opcion de encontrar la pelicula mas larga.
+    Parametros:
+        peliculas (list) = lista de peliculas
+    """
+    print(mod.encontrar_pelicula_mas_larga(peliculas))
+
+
+def ejecutar_consultar_duracion_promedio_peliculas(peliculas: list) -> None:
     """Ejecuta la opcion de consultar la duracion promedio de las peliculas.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     """
-   # TODO: Completar
+    print(mod.duracion_promedio_peliculas(peliculas))
 
 
-def ejecutar_encontrar_estrenos(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> None:
+def ejecutar_encontrar_estrenos(peliculas: list) -> None:
     """ Ejecuta la opcion de buscar peliculas de estreno. Esto es: las peliculas que sean 
         mas recientes que un anio dado.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     """
-   # TODO: Completar
+    anio_consulta = int(input('Ingrese el año a consultar estrenos: '))
+    print(mod.encontrar_estrenos(peliculas, anio_consulta))
 
 
-def ejecutar_cuantas_peliculas_18_mas(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> None:
+def ejecutar_cuantas_peliculas_18_mas(peliculas: list) -> None:
     """Ejecuta la opcion de consultar cuantas peliculas de la agenda tienen clasificacion
     18+.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     """
-   # TODO: Completar
+    print(mod.cuantas_peliculas_18_mas(peliculas))
 
 
-def ejecutar_reagendar_pelicula(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> None:
+def ejecutar_reagendar_pelicula(peliculas: list) -> None:
     """Ejecuta la opcion de reagendar una pelicula
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     """
-    print("Reagendar una pelicula de la agenda")
-
-    nombre = input("Ingrese el nombre de la pelicula que desea reagendar: ")
-    pelicula = mod.encontrar_pelicula(nombre, p1, p2, p3, p4, p5)
+    nombre_pelicula = input("Ingrese el nombre de la película que desea reagendar: ")
+    pelicula = mod.encontrar_pelicula(nombre_pelicula, peliculas)
     
     if pelicula is None:
-        print("No hay ninguna pelicula con este nombre")
-    # TODO: Completar
+        print("No hay ninguna película con este nombre")
+    else:
+        preferencia = mod.pedir_preferencias()
+        nueva_hora = int(input('Ingrese la nueva hora en formato 24 horas para la película '
+                               + pelicula['nombre'] + ': '))
+        nuevo_dia = input('Ingrese el nuevo día para la película ' + pelicula['nombre'] + ': ')
+        print(mod.reagendar_pelicula(pelicula, nueva_hora, nuevo_dia, preferencia))
 
 
-def ejecutar_decidir_invitar(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> None:
+def ejecutar_decidir_invitar(peliculas: list) -> None:
     """Ejecuta la opcion de decidir si se puede invitar a alguien a ver una pelicula o no.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     """
-    print("Decidir si se puede invitar a alguien a ver una pelicula")
-
-    nom_peli = input("Ingrese el nombre de la pelicula: ")
-    pelicula = mod.encontrar_pelicula(nom_peli, p1, p2, p3, p4, p5)
+    nombre_pelicula = input("Ingrese el nombre de la película: ")
+    pelicula = mod.encontrar_pelicula(nombre_pelicula, peliculas)
+    autorizacion = False
 
     if pelicula is None:
-        print("No hay ninguna pelicula con este nombre")
-   # TODO: Completar
+        print("No hay ninguna película con este nombre")
+    else:
+        edad = int(input("Ingrese la edad del invitado en años: "))
+        if edad < 18 and pelicula['genero'].find('Documental') < 0:
+            autorizacion = mod.pedir_autorizacion()
+
+        puede_invitar = mod.decidir_invitar(pelicula, edad, autorizacion)
+        if puede_invitar:
+            print('La persona SI puede ser invitado para la película', pelicula['nombre'])
+        else:
+            print('La persona NO puede ser invitado para la película', pelicula['nombre'])
 
 
 def iniciar_aplicacion():
@@ -148,50 +149,35 @@ def iniciar_aplicacion():
     Luego la funcion le muestra el menu al usuario y espera a que seleccione una opcion.
     Esta operacion se repite hasta que el usuario seleccione la opcion de salir.
     """
-    pelicula1 = mod.crear_pelicula("Shrek",  "Familiar, Comedia", 92, 2001, 'Todos', 1700, "Viernes")
-    pelicula2 = mod.crear_pelicula("Get Out",  "Suspenso, Terror", 104, 2017, '18+', 2330, "Sábado")  
-    pelicula3 = mod.crear_pelicula("Icarus",  "Documental, Suspenso", 122, 2017, '18+', 800, "Domingo")
-    pelicula4 = mod.crear_pelicula("Inception",  "Acción, Drama", 148, 2010, '13+', 1300, "Lunes")
-    pelicula5 = mod.crear_pelicula("The Empire Strikes Back",  "Familiar, Ciencia-Ficción", 124, 1980, '7+',
-                                   1415, "Miércoles")
+    peliculas = []
+
+    peliculas.append(mod.crear_pelicula("Shrek", "Familiar, Comedia", 92, 2001, 'Todos', 1700, "Viernes"))
+    peliculas.append(mod.crear_pelicula("Get Out", "Suspenso, Terror", 104, 2017, '18+', 2330, "Sábado"))
+    peliculas.append(mod.crear_pelicula("Icarus", "Documental, Suspenso", 122, 2019, '18+', 800, "Domingo"))
+    peliculas.append(mod.crear_pelicula("Inception", "Acción, Drama", 148, 2010, '13+', 1300, "Lunes"))
+    peliculas.append(mod.crear_pelicula("The Empire Strikes Back",
+                                        "Familiar, Ciencia-Ficción", 124, 1980, '7+', 1415, "Miércoles"))
     
     ejecutando = True
     while ejecutando:            
-        print("\n\nMi agenda de peliculas para la semana de receso" + "\n" + ("-"*50))
-        print("Pelicula 1")
-        mostrar_informacion_pelicula(pelicula1)
-        print("-"*50)
+        print("\n\nMi agenda de películas para la semana de receso" + "\n" + ("-"*50))
+        i = 1
+        for pelicula in peliculas:
+            print('Película', i)
+            mostrar_informacion_pelicula(pelicula)
+            print("-" * 50)
+            i += 1
         
-        print("Pelicula 2")
-        mostrar_informacion_pelicula(pelicula2)
-        print("-"*50)
-        
-        print("Pelicula 3")
-        mostrar_informacion_pelicula(pelicula3)
-        print("-"*50)
-        
-        print("Pelicula 4")
-        mostrar_informacion_pelicula(pelicula4)
-        print("-"*50)
-        
-        print("Pelicula 5")
-        mostrar_informacion_pelicula(pelicula5)
-        print("-"*50)
-        
-        ejecutando = mostrar_menu_aplicacion(pelicula1, pelicula2, pelicula3, pelicula4, pelicula5)
+        ejecutando = mostrar_menu_aplicacion(peliculas)
 
         if ejecutando:
             input("Presione cualquier tecla para continuar ... ")
 
 
-def mostrar_menu_aplicacion(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> bool:
+def mostrar_menu_aplicacion(peliculas: list) -> bool:
     """Le muestra al usuario las opciones de ejecución disponibles.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     Retorno:
         Esta funcion retorna True si el usuario selecciono una opcion diferente 
         a la opcion que le permite salir de la aplicacion.
@@ -199,34 +185,29 @@ def mostrar_menu_aplicacion(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) ->
         de la aplicacion.
     """
     print("Menu de opciones")
-    print(" 1 - Consultar pelicula mas larga")
-    print(" 2 - Consultar duracion promedio de las peliculas")
-    print(" 3 - Consultar peliculas de estreno")
-    print(" 4 - Consultar cuantas peliculas tienen clasificacion 18+")
-    print(" 5 - Reagendar pelicula")
-    print(" 6 - Verificar si se puede invitar a alguien")    
-    print(" 7 - Salir de la aplicacion")
+    print(" 1 - Encontrar película por nombre")
+    print(" 2 - Consultar película mas larga")
+    print(" 3 - Consultar duración promedio de las películas")
+    print(" 4 - Consultar películas de estreno")
+    print(" 5 - Consultar cuantas películas tienen clasificación 18+")
+    print(" 6 - Reagendar película")
+    print(" 7 - Verificar si se puede invitar a alguien")
+    print(" 8 - Salir de la aplicación")
 
     opcion_elegida = input("Ingrese la opcion que desea ejecutar: ").strip()
     
     continuar_ejecutando = True
 
-    if opcion_elegida == "1":
-        ejecutar_encontrar_pelicula_mas_larga(p1, p2, p3, p4, p5)
-    elif opcion_elegida == "2":
-        ejecutar_consultar_duracion_promedio_peliculas(p1, p2, p3, p4, p5)
-    elif opcion_elegida == "3":
-        ejecutar_encontrar_estrenos(p1, p2, p3, p4, p5)
-    elif opcion_elegida == "4":
-        ejecutar_cuantas_peliculas_18_mas(p1, p2, p3, p4, p5)        
-    elif opcion_elegida == "5":
-        ejecutar_reagendar_pelicula(p1, p2, p3, p4, p5) 
-    elif opcion_elegida == "6":
-        ejecutar_decidir_invitar(p1, p2, p3, p4, p5) 
-    elif opcion_elegida == "7":
-        continuar_ejecutando = False
-    else:
-        print("La opcion " + opcion_elegida + " no es una opcion valida.")
+    match opcion_elegida:
+        case '1': ejecutar_encontrar_pelicula(peliculas)
+        case '2': ejecutar_encontrar_pelicula_mas_larga(peliculas)
+        case '3': ejecutar_consultar_duracion_promedio_peliculas(peliculas)
+        case '4': ejecutar_encontrar_estrenos(peliculas)
+        case '5': ejecutar_cuantas_peliculas_18_mas(peliculas)
+        case '6': ejecutar_reagendar_pelicula(peliculas)
+        case '7': ejecutar_decidir_invitar(peliculas)
+        case '8': continuar_ejecutando = False
+        case _: print("La opción " + opcion_elegida + " no es valida.")
     
     return continuar_ejecutando
 

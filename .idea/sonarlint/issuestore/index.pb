@@ -1,8 +1,6 @@
 
 F
 Syntax/conditionals.py,0\b\0bbbfd44da07cc58c35a9a959dc793e11e6dc9f0
-„
-TCoursera/Semana_1/CalculadoraIndicesCorporales/consola_calculo_calorias_actividad.py,4\8\4883be2a3da1e2f6d976cdba9e5d2eb5917c54e3
 ?
 Syntax/lists.py,4\5\45e618857e1e4ba7da17002d824f1477f403a67e
 A

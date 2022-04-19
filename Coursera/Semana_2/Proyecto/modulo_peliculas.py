@@ -11,22 +11,11 @@ Temas:
 * Especificacion y documentacion.
 * Instrucciones condicionales.
 * Diccionarios.
-@author: Cupi2
-
-NOTA IMPORTANTE PARA TENER EN CUENTA EN TODAS LAS FUNCIONES DE ESTE MODULO:
-        Los diccionarios de pelicula tienen las siguientes parejas de clave-valor:
-            - nombre (str): Nombre de la pelicula agendada.
-            - genero (str): Generos de la pelicula separados por comas.
-            - duracion (int): Duracion en minutos de la pelicula
-            - anio (int): Anio de estreno de la pelicula
-            - clasificacion (str): Clasificacion de restriccion por edad
-            - hora (int): Hora de inicio de la pelicula
-            - dia (str): Indica que día de la semana se planea ver la película
+@author: Luis Santa
 """
 
 
-def crear_pelicula(nombre: str, genero: str, duracion: int, anio: int, 
-                  clasificacion: str, hora: int, dia: str) -> dict:
+def crear_pelicula(nombre: str, genero: str, duracion: int, anio: int, clasificacion: str, hora: int, dia: str) -> dict:
     """Crea un diccionario que representa una nueva película con toda su información 
        inicializada.
     Parámetros:
@@ -40,99 +29,110 @@ def crear_pelicula(nombre: str, genero: str, duracion: int, anio: int,
         dia (str): Dia de la semana en el cual se planea ver la pelicula.
     Retorna:
         dict: Diccionario con los datos de la pelicula
-    """    
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return None
+    """
+    pelicula = {
+        'nombre': nombre,
+        'genero': genero,
+        'duracion': duracion,
+        'anio': anio,
+        'clasificacion': clasificacion,
+        'hora': hora,
+        'dia': dia
+    }
+    return pelicula
 
 
-def encontrar_pelicula(nombre_pelicula: str, p1: dict, p2: dict, p3: dict, p4: dict,  p5: dict) -> dict:
+def encontrar_pelicula(nombre_pelicula_a_buscar: str, peliculas: list) -> dict:
     """Encuentra en cual de los 5 diccionarios que se pasan por parametro esta la 
        pelicula cuyo nombre es dado por parametro.
        Si no se encuentra la pelicula se debe retornar None.
     Parametros:
-        nombre_pelicula (str): El nombre de la pelicula que se desea encontrar.
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        nombre_pelicula_a_buscar (str): El nombre de la pelicula que se desea encontrar.
+        peliculas (list) = lista de peliculas
     Retorna:
         dict: Diccionario de la pelicula cuyo nombre fue dado por parametro. 
         None si no se encuentra una pelicula con ese nombre.
     """
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return None
+    pelicula_encontrada = None
+    for pelicula in peliculas:
+        if pelicula['nombre'] == nombre_pelicula_a_buscar:
+            pelicula_encontrada = pelicula
+    return pelicula_encontrada
 
 
-def encontrar_pelicula_mas_larga(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> dict:
+def encontrar_pelicula_mas_larga(peliculas: list) -> dict:
     """Encuentra la pelicula de mayor duracion entre las peliculas recibidas por
        parametro.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     Retorna:
         dict: El diccionario de la pelicula de mayor duracion
     """
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return None
+    mayor_duracion = 0
+    pelicula_mas_larga = {}
+    for pelicula in peliculas:
+        if pelicula['duracion'] > mayor_duracion:
+            pelicula_mas_larga = pelicula
+            mayor_duracion = pelicula['duracion']
+    return pelicula_mas_larga
 
 
-def duracion_promedio_peliculas(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> str:
+def duracion_promedio_peliculas(peliculas: list) -> str:
     """Calcula la duracion promedio de las peliculas que entran por parametro. 
        Esto es, la duración total de todas las peliculas dividida sobre el numero de peliculas. 
        Retorna la duracion promedio en una cadena de formato 'HH:MM' ignorando los posibles decimales.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     Retorna:
         str: la duracion promedio de las peliculas en formato 'HH:MM'
     """
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return ""
+    duracion_peliculas = 0
+    for pelicula in peliculas:
+        duracion_peliculas += pelicula['duracion']
+    promedio = int(duracion_peliculas / 5)
+    horas, minutos = divmod(promedio, 60)
+    return str(horas) + ':' + str(minutos)
 
 
-def encontrar_estrenos(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict, anio: int) -> str:
+def encontrar_estrenos(peliculas: list, anio: int) -> str:
     """Busca entre las peliculas cuales tienen como anio de estreno una fecha estrictamente
        posterior a la recibida por parametro.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
         anio (int): Anio limite para considerar la pelicula como estreno.
     Retorna:
         str: Una cadena con el nombre de la pelicula estrenada posteriormente a la fecha recibida. 
         Si hay mas de una pelicula, entonces se retornan los nombres de todas las peliculas 
         encontradas separadas por comas. Si ninguna pelicula coincide, retorna "Ninguna".
     """
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return ""
+    estrenos = ''
+    for pelicula in peliculas:
+        if pelicula['anio'] > anio:
+            if estrenos:
+                estrenos += ', ' + pelicula['nombre']
+            else:
+                estrenos += pelicula['nombre']
+    if not estrenos:
+        estrenos = 'Ninguna'
+    return estrenos
 
 
-def cuantas_peliculas_18_mas(p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> int:
+def cuantas_peliculas_18_mas(peliculas: list) -> int:
     """Indica cuantas peliculas de clasificación '18+' hay entre los diccionarios recibidos.
     Parametros:
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
+        peliculas (list) = lista de peliculas
     Retorna:
         int: Numero de peliculas con clasificacion '18+'
     """
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return -1
+    numero_peliculas_mas_18 = 0
+    for pelicula in peliculas:
+        if pelicula['clasificacion'] == '18+' or pelicula['clasificacion'] == 'Todos':
+            numero_peliculas_mas_18 += 1
+    return numero_peliculas_mas_18
 
 
-def reagendar_pelicula(peli:dict, nueva_hora: int, nuevo_dia: str, 
-                       control_horario: bool, p1: dict, p2: dict, p3: dict, p4: dict, p5: dict) -> bool:
+def reagendar_pelicula(pelicula: dict, nueva_hora: int, nuevo_dia: str,
+                       control_horario: bool) -> bool:
     """Verifica si es posible reagendar la pelicula que entra por parametro. Para esto verifica
        si la nueva hora y el nuevo dia no entran en conflicto con ninguna otra pelicula, 
        y en caso de que el usuario haya pedido control horario verifica que se cumplan 
@@ -143,29 +143,76 @@ def reagendar_pelicula(peli:dict, nueva_hora: int, nuevo_dia: str,
         nuevo_dia (str): Nuevo dia en el cual se quiere ver la pelicula
         control_horario (bool): Representa si el usuario quiere o no controlar
                                 el horario de las peliculas.
-        p1 (dict): Diccionario que contiene la informacion de la pelicula 1.
-        p2 (dict): Diccionario que contiene la informacion de la pelicula 2.
-        p3 (dict): Diccionario que contiene la informacion de la pelicula 3.
-        p4 (dict): Diccionario que contiene la informacion de la pelicula 4.
-        p5 (dict): Diccionario que contiene la informacion de la pelicula 5.
     Retorna:
         bool: True en caso de que se haya podido reagendar la pelicula, False de lo contrario.
     """
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return False
+    if not control_horario:
+        puede_reagendar = True
+    else:
+        if pelicula['genero'].find('Documental') >= 0 and nueva_hora > 22:
+            puede_reagendar = False
+        elif pelicula['genero'].find('Drama') >= 0 and nuevo_dia == 'Viernes':
+            puede_reagendar = False
+        elif nuevo_dia != 'Sabado' and nuevo_dia != 'Domingo' and nueva_hora <= 6 or nueva_hora >= 21:
+            puede_reagendar = False
+        else:
+            puede_reagendar = True
+
+    if puede_reagendar:
+        pelicula['hora'] = nueva_hora
+        pelicula['dia'] = nuevo_dia
+    return puede_reagendar
 
 
-def decidir_invitar(peli: dict, edad_invitado: int, autorizacion_padres: bool) -> bool:
+def decidir_invitar(pelicula: dict, edad_invitado: int, autorizacion_padres: bool = False) -> bool:
     """Verifica si es posible invitar a la persona cuya edad entra por parametro a ver la 
        pelicula que entra igualmente por parametro. 
        Para esto verifica el cumplimiento de las restricciones correspondientes.
     Parametros:
-        peli (dict): Pelicula que se desea ver con el invitado
+        pelicula (dict): Pelicula que se desea ver con el invitado
         edad_invitado (int): Edad del invitado con quien se desea ver la pelicula
         autorizacion_padres (bool): Indica si el invitado cuenta con la autorizacion de sus padres 
         para ver la pelicula
     Retorna:
         bool: True en caso de que se pueda invitar a la persona, False de lo contrario.
     """
-    #TODO: completar y remplazar la siguiente línea por el resultado correcto 
-    return False
+    se_puede_invitar = False
+    if edad_invitado >= 18:
+        se_puede_invitar = True
+    if edad_invitado <= 10 and pelicula['clasificacion'].find('Familiar') >= 0:
+        se_puede_invitar = True
+    if pelicula['genero'].find('Documental') >= 0:
+        se_puede_invitar = True
+    if edad_invitado < 18 and pelicula['genero'].find('Documental') < 0 and autorizacion_padres:
+        se_puede_invitar = True
+    return se_puede_invitar
+
+
+def pedir_autorizacion() -> bool:
+    valor_autorizacion = False
+    fin_ciclo = False
+    while not fin_ciclo:
+        autorizacion = input('El menor de edad cuenta con autorización de los padres\n1: Si\n2: No\n')
+        if autorizacion == '1':
+            valor_autorizacion = True
+            fin_ciclo = True
+        elif autorizacion == '2':
+            fin_ciclo = True
+        else:
+            print('La opción', autorizacion, 'no es valida')
+    return valor_autorizacion
+
+
+def pedir_preferencias() -> bool:
+    valor_preferencias = False
+    fin_ciclo = False
+    while not fin_ciclo:
+        preferencia = input('Desea tener en cuenta sus preferencias\n1: Si\n2: No\n')
+        if preferencia == '1':
+            valor_preferencias = True
+            fin_ciclo = True
+        elif preferencia == '2':
+            fin_ciclo = True
+        else:
+            print('La opción', preferencia, 'no es valida')
+    return valor_preferencias
