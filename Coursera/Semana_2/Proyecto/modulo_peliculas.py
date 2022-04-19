@@ -149,11 +149,11 @@ def reagendar_pelicula(pelicula: dict, nueva_hora: int, nuevo_dia: str,
     if not control_horario:
         puede_reagendar = True
     else:
-        if pelicula['genero'].find('Documental') >= 0 and nueva_hora > 22:
+        if pelicula['genero'].find('Documental') >= 0 and nueva_hora > 2200:
             puede_reagendar = False
         elif pelicula['genero'].find('Drama') >= 0 and nuevo_dia == 'Viernes':
             puede_reagendar = False
-        elif nuevo_dia != 'Sabado' and nuevo_dia != 'Domingo' and nueva_hora <= 6 or nueva_hora >= 21:
+        elif nuevo_dia != 'Sabado' and nuevo_dia != 'Domingo' and nueva_hora <= 600 or nueva_hora >= 2100:
             puede_reagendar = False
         else:
             puede_reagendar = True
