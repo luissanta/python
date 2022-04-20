@@ -1,5 +1,6 @@
 ### IntelliJ IDEA ###
 .idea
+.idea/sonarlint
 *.iws
 *.iml
 *.ipr
