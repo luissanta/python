@@ -53,3 +53,7 @@ e
 ,Coursera/Semana_2/String/mas_a_en_palabra.py,0\a\0a46db0a06d4f7e4c81f0ebd97bece30a0907f89
 ^
 .Coursera/Semana_2/String/materias_favoritas.py,7\8\78b5f09517f09432f6ced4f6ed3fe1f5aa216bfc
+f
+6Coursera/Semana_3/Ciclo while/sucesion_de_fibonacci.py,f\d\fd732206da923f5d3a7a243e7b5d5229cb7ae90d
+_
+/Coursera/Semana_3/Ciclo while/mismos_digitos.py,1\2\12b45f1df40e5ab5cae4ed233a1ef07ea1a0ce11
