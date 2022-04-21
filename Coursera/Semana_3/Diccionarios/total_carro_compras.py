@@ -13,7 +13,7 @@
 
 
 def valor_carrito_compras(lista_productos: dict) -> float:
-    valor_total = 0.0
+    valor_total = 0
     for producto in lista_productos.values():
         valor_total += producto
     return valor_total
