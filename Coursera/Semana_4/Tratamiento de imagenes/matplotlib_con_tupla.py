@@ -65,7 +65,22 @@ def convertir_a_grises(imagen_a_convertir: list) -> None:
             imagen_a_convertir[i][j] = (gris, gris, gris)
 
 
+def convertir_a_binario(imagen: list, umbral: int) -> None:
+    alto = len(imagen)
+    ancho = len(imagen[0])
+    for i in range(0, alto):
+        for j in range(0, ancho):
+            rojo, verde, azul = imagen[i][j]
+            gris = (rojo + verde + azul) // 3
+            if gris < umbral:
+                imagen[i][j] = (0, 0, 0)
+            else:
+                imagen[i][j] = (255, 255, 255)
+
+
 imagen_muestra = cargar_imagen("muestra.jpg")
 visualizar_imagen(imagen_muestra)
 convertir_a_grises(imagen_muestra)
+visualizar_imagen(imagen_muestra)
+convertir_a_binario(imagen_muestra, 100)
 visualizar_imagen(imagen_muestra)
